@@ -1,7 +1,5 @@
 # TRHR_elasticnet_pooling
 ------------------------------------------------------------------------
-data
-
 processed data is under /data:
 
 global gridded SST over 1979-2019 (based on HadISST) under /data/sst
