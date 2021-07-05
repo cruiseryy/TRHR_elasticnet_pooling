@@ -1,0 +1,19 @@
+DATA NOTES：
+---------------------------------------------------------------
+PRECIPITATION:
+
+CHIRPS v2.0 PRECIPITATION (GLOBAL MONTHLY)
+
+SOURCE: https://data.chc.ucsb.edu/products/CHIRPS-2.0/global_monthly/netcdf/
+
+
+国家级地面气象站数据 (NATIONAL METEOROLOGY STATION DATA PRODUCT) (NATIONAL WIDE CHINA, 6-HOURLY)
+
+SOURCE: http://data.cma.cn (need verificiation)
+
+---------------------------------------------------------------
+SEA SURFACE TEMPERATURE:
+
+HADISST SST (GLOBAL MONTHLY) 
+
+SOURCE: https://www.metoffice.gov.uk/hadobs/hadisst/data/download.html
