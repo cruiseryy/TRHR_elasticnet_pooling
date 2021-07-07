@@ -104,6 +104,7 @@ pause = 1;
 % ----------------------------------------------
 
 cc = zeros(25,1);
+nse = zeros(25,1);
 tmap = zeros(90,45);
 tmpidx = 1:39;
 for lag = 0:24
@@ -113,6 +114,10 @@ for lag = 0:24
     tmpfit = FitInfo.Intercept + xx*Beta;
 
     cc(lag+1) = corr(tmpfit(tmpidx(21:end)), trhr_prcp(tmpidx(21:end)));
+    
+    rescale_coef = 1; 
+%     rescale_coef = std(trhr_prcp(tmpidx(1:20)))/std(tmpfit(tmpidx(1:20)));
+    nse(lag+1) = 1 - sum((trhr_prcp(tmpidx(21:end)) - rescale_coef*tmpfit(tmpidx(21:end))).^2)/sum((trhr_prcp(tmpidx(21:end)) - mean(trhr_prcp(tmpidx(21:end)))).^2);
 
     for k = 1:length(Beta)
         tmap(loc(1,k), loc(2,k)) = Beta(k);
@@ -139,7 +144,7 @@ end
 % subplot(1,5, 3:5)
 % plot(1:39, trhr_prcp, 'r')
 % hold on
-% plot(1:39, tmpfit*4, 'b')
+% plot(1:39, tmpfit*rescale_coef, 'b')
 % grid
 % plot([1 1]*20.5, 2.5*[-1 1], 'k--')
 % plot([0 40], [0 0], 'k-')
